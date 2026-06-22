@@ -1,4 +1,4 @@
-python_code=''''''
+# Url Github Repository: https://github.com/25053003-student-uwp/Group-Task-OOP.git
 class Buku:
     def __init__(self, kodeBuku, judul, penulis, tahunTerbit, stok):
         self._kodeBuku = kodeBuku
