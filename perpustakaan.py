@@ -137,7 +137,15 @@ class SistemManajemenBuku:
             return
         
         print("Buku berhasil ditambahkan!")
-        
+    def hapusBuku(self):
+        kodeHapus = input("\nMasukkan kode buku yang ingin dihapus: ")
+        for b in self.daftarBuku:
+            if b.kodeBuku == kodeHapus:
+                self.daftarBuku.remove(b)
+                print(f'Buku dengan kode "{kodeHapus}" berhasil dihapus.')
+                return
+        print(f'Buku dengan kode "{kodeHapus}" tidak ditemukan.')
+    
     def cariBuku(self):
         cariJudul = input("\nMasukkan judul buku yang dicari: ").lower()
         ditemukan = False
@@ -165,7 +173,8 @@ class SistemManajemenBuku:
             print("1. Tambah Buku")
             print("2. Cari Buku berdasarkan Judul")
             print("3. Tampilkan Semua Buku")
-            print("4. Keluar")
+            print("4. Hapus Buku")
+            print("5. Keluar")
             pilihan = input("Pilih menu: ")
             
             if pilihan == "1":
@@ -175,6 +184,8 @@ class SistemManajemenBuku:
             elif pilihan == "3":
                 self.tampilkanSemuaBuku()
             elif pilihan == "4":
+                self.hapusBuku()
+            elif pilihan == "5":
                 print("Program selesai. Terima kasih!")
                 break
             else:
